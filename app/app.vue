@@ -1,6 +1,6 @@
 <template>
   <div class="flex h-screen w-screen overflow-hidden">
-    <ChatRoot class="size-full" :model="model" />
+    <ChatRoot class="size-full" :model="model" session-id="test" />
   </div>
 </template>
 

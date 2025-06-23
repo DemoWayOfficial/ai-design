@@ -14,5 +14,10 @@ export default withNuxt(
       'simple-import-sort/exports': 'error',
     },
   },
+  {
+    rules: {
+      curly: ['error', 'all'],
+    },
+  },
   eslintPluginPrettierRecommended,
 );

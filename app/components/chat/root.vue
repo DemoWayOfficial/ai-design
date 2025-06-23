@@ -20,10 +20,14 @@ import { cn } from '~/lib/utils';
 
 const props = defineProps<{
   class?: ClassValue;
+  sessionId: string;
   model: LanguageModelV1;
 }>();
 
-const { messages, input, handleSubmit } = useChat(() => props.model);
+const { messages, input, handleSubmit } = useChat({
+  model: () => props.model,
+  sessionId: () => props.sessionId,
+});
 
 function onSubmit() {
   handleSubmit();
