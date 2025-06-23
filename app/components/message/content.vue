@@ -15,6 +15,7 @@ const props = defineProps<{
   token: Token;
 }>();
 
+// https://github.com/markedjs/marked/blob/master/src/Renderer.ts
 const content = computed(() => {
   const { token } = props;
 
