@@ -11,6 +11,9 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.22(zod@3.25.67)
+      '@ai-sdk/openai-compatible':
+        specifier: ^0.2.14
+        version: 0.2.14(zod@3.25.67)
       '@ai-sdk/provider':
         specifier: ^1.1.3
         version: 1.1.3
@@ -20,6 +23,12 @@ importers:
       '@vueuse/core':
         specifier: ^13.4.0
         version: 13.4.0(vue@3.5.17(typescript@5.8.3))
+      '@vueuse/nuxt':
+        specifier: 13.4.0
+        version: 13.4.0(magicast@0.3.5)(nuxt@3.17.5(@parcel/watcher@2.5.1)(@types/node@24.0.3)(better-sqlite3@12.0.0)(db0@0.3.2(better-sqlite3@12.0.0))(eslint@9.29.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.44.0)(stylus@0.57.0)(terser@5.43.1)(typescript@5.8.3)(vite@6.3.5(@types/node@24.0.3)(jiti@2.4.2)(lightningcss@1.30.1)(stylus@0.57.0)(terser@5.43.1)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0))(vue@3.5.17(typescript@5.8.3))
+      '@vueuse/rxjs':
+        specifier: ^13.4.0
+        version: 13.4.0(rxjs@7.8.2)(vue@3.5.17(typescript@5.8.3))
       ai:
         specifier: ^4.3.16
         version: 4.3.16(react@19.1.0)(zod@3.25.67)
@@ -29,6 +38,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      dexie:
+        specifier: ^4.0.11
+        version: 4.0.11
       lucide-vue-next:
         specifier: ^0.522.0
         version: 0.522.0(vue@3.5.17(typescript@5.8.3))
@@ -38,6 +50,9 @@ importers:
       reka-ui:
         specifier: ^2.3.1
         version: 2.3.1(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
+      rxjs:
+        specifier: ^7.8.2
+        version: 7.8.2
       shadcn-nuxt:
         specifier: 2.2.0
         version: 2.2.0(magicast@0.3.5)
@@ -95,6 +110,12 @@ importers:
         version: 2.2.10(typescript@5.8.3)
 
 packages:
+
+  '@ai-sdk/openai-compatible@0.2.14':
+    resolution: {integrity: sha512-icjObfMCHKSIbywijaoLdZ1nSnuRnWgMEMLgwoxPJgxsUHMx0aVORnsLUid4SPtdhHI3X2masrt6iaEQLvOSFw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
 
   '@ai-sdk/openai@1.3.22':
     resolution: {integrity: sha512-QwA+2EkG0QyjVR+7h6FE7iOu2ivNqAVMm9UJZkVxxTk5OIq5fFJDTEI/zICEMuHImTTXR2JjsL6EirJ28Jc4cw==}
@@ -1610,6 +1631,18 @@ packages:
   '@vueuse/metadata@13.4.0':
     resolution: {integrity: sha512-CPDQ/IgOeWbqItg1c/pS+Ulum63MNbpJ4eecjFJqgD/JUCJ822zLfpw6M9HzSvL6wbzMieOtIAW/H8deQASKHg==}
 
+  '@vueuse/nuxt@13.4.0':
+    resolution: {integrity: sha512-0NY8CXQVTZhPipgfUyK9TuEP+tIiy1PteDVPcjdCkDqyGzhrUef4/6j7FeVn/YGgOFqFWfgdrmayESMwHv/onQ==}
+    peerDependencies:
+      nuxt: ^3.0.0 || ^4.0.0-0
+      vue: ^3.5.0
+
+  '@vueuse/rxjs@13.4.0':
+    resolution: {integrity: sha512-KhfZ7qHlZXuV76KLpk10Ozg3Jq99GiuX+1sk/MMh3Jt8ubkZ8bhLRq2+M2buYdjlPt8O6600WV9K7fBIOLqKZQ==}
+    peerDependencies:
+      rxjs: '>=6.0.0'
+      vue: ^3.5.0
+
   '@vueuse/shared@12.8.2':
     resolution: {integrity: sha512-dznP38YzxZoNloI0qpEfpkms8knDtaoQ6Y/sfS0L7Yki4zh40LFHEhur0odJC6xTHG5dxWVPiUWBXn+wCG2s5w==}
 
@@ -2287,6 +2320,9 @@ packages:
 
   devalue@5.1.1:
     resolution: {integrity: sha512-maua5KUiapvEwiEAe+XnlZ3Rh0GD+qI1J/nb9vrJc3muPXvcF/8gXYTWF76+5DAqHyDUtOIImEuo0YKE9mshVw==}
+
+  dexie@4.0.11:
+    resolution: {integrity: sha512-SOKO002EqlvBYYKQSew3iymBoN2EQ4BDw/3yprjh7kAfFzjBYkaMNa/pZvcA7HSWlcKSQb9XhPe3wKyQ0x4A8A==}
 
   diff-match-patch@1.0.5:
     resolution: {integrity: sha512-IayShXAgj/QMXgB0IWmKx+rOPuGMhqm5w6jvFxmVenXKIzRqTAAsbBPT3kWQeGANj3jGgvcvv4yK6SxqYmikgw==}
@@ -4278,6 +4314,9 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
+  rxjs@7.8.2:
+    resolution: {integrity: sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==}
+
   safe-buffer@5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
 
@@ -5129,6 +5168,12 @@ packages:
     resolution: {integrity: sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw==}
 
 snapshots:
+
+  '@ai-sdk/openai-compatible@0.2.14(zod@3.25.67)':
+    dependencies:
+      '@ai-sdk/provider': 1.1.3
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.67)
+      zod: 3.25.67
 
   '@ai-sdk/openai@1.3.22(zod@3.25.67)':
     dependencies:
@@ -6866,6 +6911,23 @@ snapshots:
 
   '@vueuse/metadata@13.4.0': {}
 
+  '@vueuse/nuxt@13.4.0(magicast@0.3.5)(nuxt@3.17.5(@parcel/watcher@2.5.1)(@types/node@24.0.3)(better-sqlite3@12.0.0)(db0@0.3.2(better-sqlite3@12.0.0))(eslint@9.29.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.44.0)(stylus@0.57.0)(terser@5.43.1)(typescript@5.8.3)(vite@6.3.5(@types/node@24.0.3)(jiti@2.4.2)(lightningcss@1.30.1)(stylus@0.57.0)(terser@5.43.1)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0))(vue@3.5.17(typescript@5.8.3))':
+    dependencies:
+      '@nuxt/kit': 3.17.5(magicast@0.3.5)
+      '@vueuse/core': 13.4.0(vue@3.5.17(typescript@5.8.3))
+      '@vueuse/metadata': 13.4.0
+      local-pkg: 1.1.1
+      nuxt: 3.17.5(@parcel/watcher@2.5.1)(@types/node@24.0.3)(better-sqlite3@12.0.0)(db0@0.3.2(better-sqlite3@12.0.0))(eslint@9.29.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.44.0)(stylus@0.57.0)(terser@5.43.1)(typescript@5.8.3)(vite@6.3.5(@types/node@24.0.3)(jiti@2.4.2)(lightningcss@1.30.1)(stylus@0.57.0)(terser@5.43.1)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0)
+      vue: 3.5.17(typescript@5.8.3)
+    transitivePeerDependencies:
+      - magicast
+
+  '@vueuse/rxjs@13.4.0(rxjs@7.8.2)(vue@3.5.17(typescript@5.8.3))':
+    dependencies:
+      '@vueuse/shared': 13.4.0(vue@3.5.17(typescript@5.8.3))
+      rxjs: 7.8.2
+      vue: 3.5.17(typescript@5.8.3)
+
   '@vueuse/shared@12.8.2(typescript@5.8.3)':
     dependencies:
       vue: 3.5.17(typescript@5.8.3)
@@ -7527,6 +7589,8 @@ snapshots:
       - supports-color
 
   devalue@5.1.1: {}
+
+  dexie@4.0.11: {}
 
   diff-match-patch@1.0.5: {}
 
@@ -9665,6 +9729,10 @@ snapshots:
   run-parallel@1.2.0:
     dependencies:
       queue-microtask: 1.2.3
+
+  rxjs@7.8.2:
+    dependencies:
+      tslib: 2.8.1
 
   safe-buffer@5.1.2: {}
 

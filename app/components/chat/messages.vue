@@ -1,10 +1,12 @@
 <template>
   <ui-scroll-area :class="cn('overflow-hidden', props.class)">
-    <MessageRoot
-      v-for="message of messages"
-      :key="message.id"
-      :message="message"
-    />
+    <div class="space-y-4 p-4">
+      <MessageRoot
+        v-for="message of messages"
+        :key="message.id"
+        :message="message"
+      />
+    </div>
   </ui-scroll-area>
 </template>
 

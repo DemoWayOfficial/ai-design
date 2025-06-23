@@ -1,9 +1,13 @@
 <template>
   <div :class="cn('flex', props.class)">
-    <div class="flex-1/2">preview</div>
-    <div class="flex flex-1/2 flex-col border-l">
+    <div class="w-1/2 flex-none">preview</div>
+    <div class="flex w-1/2 flex-none flex-col border-l">
       <chat-messages class="flex-1" :messages="messages" />
-      <chat-input v-model="input" class="flex-none p-2" @submit="onSubmit" />
+      <chat-input
+        v-model="input"
+        class="flex-none border-t p-2"
+        @submit="onSubmit"
+      />
     </div>
   </div>
 </template>
