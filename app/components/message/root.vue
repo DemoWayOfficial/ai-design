@@ -8,17 +8,27 @@
       )
     "
   >
-    {{ message.content }}
+    <MessageContent
+      v-for="(token, index) of tokens"
+      :key="index"
+      v-memo="token.raw"
+      :token="token"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import type { UIMessage } from '@ai-sdk/vue';
+import { lexer } from 'marked';
 
 import { messageVariants } from '~/components/message/variants';
 import { cn } from '~/lib/utils';
 
-defineProps<{
+const props = defineProps<{
   message: UIMessage;
 }>();
+
+const tokens = computed(() => {
+  return lexer(props.message.content);
+});
 </script>
