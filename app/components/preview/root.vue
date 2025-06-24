@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import type { Preview } from '~/components/preview/types';
 
-const props = defineProps<{
+defineProps<{
   preview: Preview;
 }>();
 </script>
