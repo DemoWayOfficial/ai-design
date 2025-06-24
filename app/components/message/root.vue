@@ -8,12 +8,7 @@
       )
     "
   >
-    <MessageContent
-      v-for="(token, index) of tokens"
-      :key="index"
-      v-memo="token.raw"
-      :token="token"
-    />
+    <MessageRendererChildren :tokens="tokens" :raw="message.content" />
   </div>
 </template>
 

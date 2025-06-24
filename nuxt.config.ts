@@ -11,7 +11,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   css: ['~/assets/css/tailwind.css'],
-  modules: ['@nuxt/eslint', 'shadcn-nuxt', '@vueuse/nuxt'],
+  modules: [
+    '@nuxt/eslint',
+    'shadcn-nuxt',
+    '@vueuse/nuxt',
+    '@nuxtjs/storybook',
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
