@@ -1,5 +1,6 @@
 import type { LanguageModelV1 } from '@ai-sdk/provider';
-import { useChat as useChatImpl } from '@ai-sdk/vue';
+import type { UseChatOptions } from '@ai-sdk/ui-utils';
+import { type Message, useChat as useChatImpl } from '@ai-sdk/vue';
 import { streamText } from 'ai';
 
 import { db } from '~/composables/dexie';
@@ -7,6 +8,8 @@ import { db } from '~/composables/dexie';
 export interface UseChatParams {
   model: MaybeRefOrGetter<LanguageModelV1>;
   sessionId: MaybeRefOrGetter<string>;
+  onFinish?: UseChatOptions['onFinish'];
+  onRestore?(messages: Message[]): void;
 }
 
 export function useChat(params: UseChatParams) {
@@ -24,8 +27,9 @@ export function useChat(params: UseChatParams) {
 
   const chat = useChatImpl({
     fetch: customFetch,
-    onFinish() {
+    onFinish(...args) {
       persistMessages();
+      params.onFinish?.(...args);
     },
   });
 
@@ -54,6 +58,7 @@ export function useChat(params: UseChatParams) {
       .toArray()
       .then((messages) => {
         chat.setMessages(messages);
+        params.onRestore?.(messages);
       });
   });
 
