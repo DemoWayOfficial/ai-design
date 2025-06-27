@@ -5,6 +5,7 @@ import {
   ScrollAreaRoot,
   type ScrollAreaRootProps,
   ScrollAreaViewport,
+  useForwardExpose,
 } from 'reka-ui';
 import type { HTMLAttributes } from 'vue';
 
@@ -17,10 +18,13 @@ const props = defineProps<
 >();
 
 const delegatedProps = reactiveOmit(props, 'class');
+
+const { forwardRef } = useForwardExpose();
 </script>
 
 <template>
   <ScrollAreaRoot
+    :ref="forwardRef"
     data-slot="scroll-area"
     v-bind="delegatedProps"
     :class="cn('relative', props.class)"
