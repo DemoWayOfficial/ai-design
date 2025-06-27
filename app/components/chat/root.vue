@@ -1,7 +1,18 @@
 <template>
-  <div :class="cn('flex', props.class)">
-    <ui-tabs v-model="activeTab" class="w-1/2 flex-none">
-      <ui-tabs-list>
+  <div :class="cn('flex gap-4 p-4', props.class)">
+    <ui-tabs
+      v-model="activeTab"
+      class="flex-1 overflow-hidden rounded-xl border shadow"
+    >
+      <ui-tabs-content
+        v-for="preview of previews"
+        :key="preview.id"
+        :value="preview.id"
+      >
+        <PreviewRoot class="size-full" :preview="preview">preview</PreviewRoot>
+      </ui-tabs-content>
+
+      <ui-tabs-list class="border-t">
         <ui-tabs-trigger
           v-for="preview of previews"
           :key="preview.id"
@@ -10,20 +21,13 @@
           {{ `${preview.id}.${preview.lang}` }}
         </ui-tabs-trigger>
       </ui-tabs-list>
-      <ui-tabs-content
-        v-for="preview of previews"
-        :key="preview.id"
-        :value="preview.id"
-      >
-        <PreviewRoot class="size-full" :preview="preview">preview</PreviewRoot>
-      </ui-tabs-content>
     </ui-tabs>
 
-    <div class="flex w-1/2 flex-none flex-col border-l">
+    <div class="flex w-md flex-none flex-col overflow-hidden">
       <chat-messages class="flex-1" :messages="messages" />
       <chat-input
         v-model="input"
-        class="flex-none border-t p-2"
+        class="flex-none border-t"
         @submit="onSubmit"
       />
     </div>
