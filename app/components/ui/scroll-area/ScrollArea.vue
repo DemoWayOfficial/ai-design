@@ -24,7 +24,7 @@ const { forwardRef } = useForwardExpose();
 
 <template>
   <ScrollAreaRoot
-    ref="forwardRef"
+    :ref="forwardRef"
     data-slot="scroll-area"
     v-bind="delegatedProps"
     :class="cn('relative', props.class)"
