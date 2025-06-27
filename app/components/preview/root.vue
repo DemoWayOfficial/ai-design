@@ -5,7 +5,12 @@
       class="size-full"
       :code="preview.value"
     />
-    <div v-else class="size-full">{{ preview.value }}</div>
+    <LazyMonacoEditor
+      v-else
+      class="size-full"
+      :default-value="preview.value"
+      :language="preview.lang"
+    />
   </div>
 </template>
 

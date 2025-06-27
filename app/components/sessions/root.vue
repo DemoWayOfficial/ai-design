@@ -4,8 +4,10 @@
       <AlignJustify />
     </ui-drawer-trigger>
     <ui-drawer-content>
-      <div>
-        <ui-button @click="onNewSession"></ui-button>
+      <div class="border-b p-4">
+        <ui-button variant="outline" @click="onNewSession">
+          + New Page
+        </ui-button>
       </div>
       <ui-scroll-area class="flex-1 overflow-hidden">
         <ul>
