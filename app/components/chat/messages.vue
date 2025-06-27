@@ -1,7 +1,7 @@
 <template>
   <div
     ref="container"
-    :class="cn('overflow-x-hidden overflow-y-scroll', props.class)"
+    :class="cn('overflow-x-hidden overflow-y-auto', props.class)"
     @wheel="onWheel"
   >
     <div ref="content" class="space-y-4 p-4">

@@ -7,7 +7,7 @@ export const messageVariants = cva(
       role: {
         system: '',
         user: 'bg-primary text-primary-foreground ml-auto',
-        assistant: 'bg-muted mr-auto',
+        assistant: 'mr-auto bg-white',
         data: '',
       },
     },
