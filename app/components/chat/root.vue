@@ -26,7 +26,7 @@
         />
       </div>
     </div>
-    <div class="flex w-md flex-none flex-col overflow-hidden">
+    <div class="flex w-md flex-none flex-col gap-2 overflow-hidden">
       <chat-messages class="flex-1" :messages="messages" />
       <chat-input
         v-model="input"
